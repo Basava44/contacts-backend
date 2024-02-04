@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "builds": [{ "src": "server.js", "use": "@vercel/node" }],
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@now/node-server"
+    }
+  ],
   "routes": [
-    { "src": "/api/.*", "dest": "/server.js" },
-    { "src": "/vercel.json", "dest": "/vercel.json" }
-  ]
+    { "src": "/api/contacts", "dest": "/server.js" },
+    { "src": "/api/users", "dest": "/server.js" },
+    { "src": "/(.*)", "dest": "/server.js" }
+  ],
+  "env": {
+    "PORT": 5000
+  }
 }
