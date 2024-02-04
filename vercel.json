@@ -10,8 +10,5 @@
     { "src": "/api/contacts", "dest": "/server.js" },
     { "src": "/api/users", "dest": "/server.js" },
     { "src": "/(.*)", "dest": "/server.js" }
-  ],
-  "env": {
-    "PORT": 5000
-  }
+  ]
 }
