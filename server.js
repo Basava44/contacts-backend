@@ -14,6 +14,9 @@ const app = express();
 // this is middeleware which is used to parse the incoming data from client to convert to js object
 // express.json is a built in middleware
 app.use(express.json());
+app.use("/", (req, res) => {
+  res.json({ message: "hello" });
+});
 app.use("/api/contacts", require("./routes/contactRoutes"));
 app.use("/api/users", require("./routes/usersRoutes"));
 app.use(errorHandler);
