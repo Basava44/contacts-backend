@@ -3,12 +3,21 @@
   "builds": [
     {
       "src": "server.js",
-      "use": "@vercel/node"
+      "use": "@now/node"
     }
   ],
   "routes": [
-    { "src": "/api/contacts", "dest": "/server.js" },
-    { "src": "/api/users", "dest": "/server.js" },
-    { "src": "/(.*)", "dest": "/server.js" }
-  ]
+    {
+      "src": "/api/(.*)",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/server.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "PORT": 5000
+  }
 }
