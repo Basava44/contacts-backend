@@ -13,9 +13,12 @@ connectDb();
 const app = express();
 
 // this is middeleware which is used to parse the incoming data from client to convert to js object
-// express.json is a built in middleware
+
+// this is to allow all cross origin requests
 app.options("*", cors());
 app.use(cors({ origin: "*" }));
+
+// express.json is a built in middleware
 app.use(express.json());
 app.use("/api/contacts", require("./routes/contactRoutes"));
 app.use("/api/users", require("./routes/usersRoutes"));
